@@ -1,5 +1,5 @@
 - data[config[:api]].resources.each do |r|
-  article.resource(id="r-# to_id(r.name) ")
+  article.resource id="r-#{to_id(r.name)}"
     header
       h2.resource-name
         i.fa.fa-cube
@@ -15,7 +15,7 @@
           pre= JSON.pretty_generate(r.spec)
     - if r.endpoints
       - r.endpoints.each do |e|
-        section.endpoint(id="r-# to_id(r.name)}-e-#{to_id(e.name) ")
+        section.endpoint id="r-#{to_id(r.name)}-e-#{to_id(e.name)}"
           header
             h5.endpoint-name= e.name
           .endpoint-content

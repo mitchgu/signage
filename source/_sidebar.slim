@@ -6,11 +6,12 @@ nav#nav
   ul
     - data[config[:api]].resources.each do |r|
       li.nav-resource
-        a(href="## resource_id(r) ")
+        a href="##{resource_id(r)}"
           i.fa.fa-cube
           = r.name
         - if r.endpoints
           ul
             - r.endpoints.each do |e|
               li.nav-endpoint
-                a(href="## endpoint_id(r,e) ")= e.name
+                a href="##{endpoint_id(r,e)}"
+                  = e.name
