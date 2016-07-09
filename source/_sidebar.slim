@@ -4,7 +4,7 @@ h1#title
   = data[config[:api]].name
 nav#nav
   ul
-    - data.api.resources.each do |r|
+    - data[config[:api]].resources.each do |r|
       li.nav-resource
         a(href="## resource_id(r) ")
           i.fa.fa-cube
