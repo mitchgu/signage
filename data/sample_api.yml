@@ -1,0 +1,39 @@
+name: Example API docs
+base_path: https://api.your-domain-name.com/v1
+resources:
+  - name: Apple
+    blurb: |
+      The finest apples in the world wide web
+    spec:
+      name: string
+      type: string
+      weight: int
+      eaten: boolean
+      created_at: datetime
+      updated_at: datetime
+    endpoints:
+      - name: Get a list of apples
+        path: /apples
+        verb: get
+        blurb: ALL THE APPLES
+        params:
+          - name: type
+            param_type: query
+            data_type: string
+            blurb: Filter by apple type
+            required: true
+        responses:
+          - status: 200
+            content_type: json
+            body:
+              status: "success"
+              data:
+                - <serialized Apple 0>
+                - <serialized Apple 1>
+          - status: 400
+            content_type: json
+            body:
+              status: "error"
+              data: "INVALID_APPLE_TYPE"
+        tags:
+          - dashboard

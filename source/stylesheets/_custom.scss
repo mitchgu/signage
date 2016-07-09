@@ -1,0 +1,6 @@
+// Put custom tag styles here
+.endpoint .endpoint-content .endpoint-tags li {
+  &.dashboard {
+    @include tag($blue);
+  }
+}

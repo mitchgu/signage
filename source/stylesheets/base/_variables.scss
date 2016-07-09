@@ -1,0 +1,65 @@
+// Layout
+$sidebar-width: 300px;
+$content-max-width: 800px;
+$sidebar-gutter: 20px;
+$content-gutter: 30px;
+$topbar-height: 50px;
+
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700|Source+Code+Pro:400,600|Titillium+Web:400,600';
+// Typography
+$base-font-family: 'Lato', sans-serif;
+$heading-font-family: 'Titillium Web', sans-serif;
+$heading-font-weight: 600;
+$code-font-family: 'Source Code Pro';
+$code-font-weight: 400;
+
+// Font Sizes
+$base-font-size: 1em;
+
+$bourbon: (
+  "modular-scale-base": 1em,
+  "modular-scale-ratio": $major-second
+);
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+$base-text-padding: 3px;
+$large-text-padding: 5px;
+$base-shadow-blur: 3px;
+
+// Colors
+$blue: #098BCC;
+$red: #CC098B;
+$green: #8BCC09;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$accent-color: $blue;
+$accent-background-color: tint($accent-color, 95%);
+
+// Borderac
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: #5e5e6c;
+$tertiary-background-color: shade($base-background-color, 5%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($accent-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

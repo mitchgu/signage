@@ -1,0 +1,77 @@
+- data[config[:api]].resources.each do |r|
+  article.resource(id="r-# to_id(r.name) ")
+    header
+      h2.resource-name
+        i.fa.fa-cube
+        = r.name
+    .resource-content
+      .resource-blurb
+        p= r.blurb
+      .resource-spec
+        - if r.spec
+          h6
+            i.fa.fa-code
+            | Model serialization
+          pre= JSON.pretty_generate(r.spec)
+    - if r.endpoints
+      - r.endpoints.each do |e|
+        section.endpoint(id="r-# to_id(r.name)}-e-#{to_id(e.name) ")
+          header
+            h5.endpoint-name= e.name
+          .endpoint-content
+            .endpoint-route
+              code.endpoint-verb
+                i.fa.fa-bolt
+                = e.verb
+              code.endpoint-path= e.path
+            p.endpoint-blurb= e.blurb
+            .endpoint-params
+              h6
+                i.fa.fa-arrow-right
+                | Parameters
+              - if e.params
+                table
+                  thead
+                    tr
+                      th Name
+                      th Param type
+                      th Data type
+                      th Description
+                      th Required?
+                  tbody
+                    - e.params.each do |p|
+                      tr
+                        td= p.name
+                        td= p.param_type
+                        td= p.data_type
+                        td= p.blurb
+                        td= p.required
+              - else
+                p None
+            .endpoint-responses
+              - if e.responses
+                h6
+                  i.fa.fa-arrow-left
+                  | Responses
+                - e.responses.each do |response|
+                  .endpoint-response
+                    .endpoint-response-meta
+                      span.endpoint-response-status= response.status
+                      br
+                      span.endpoint-response-content-type= response.content_type
+                    - if response.content_type == "json"
+                      pre.endpoint-response-body= h(JSON.pretty_generate(response.body))
+                    - else
+                      pre.endpoint-response-body= h(response.body)
+            .endpoint-tags
+              h6
+                i.fa.fa-tags
+                | Tags
+              - if e.tags
+                ul
+                  - e.tags.each do |t|
+                    li(class=t)
+                      i.fa.fa-tag
+                      = t
+              - else
+                p None

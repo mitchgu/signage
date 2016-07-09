@@ -1,0 +1,113 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: $secondary-background-color;
+}
+
+#sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  overflow: scroll;
+  order: 1;
+  &.extended {
+    left: 0;
+  }
+}
+
+#content {
+  flex: 1;
+  order: 2;
+  height: 100vh;
+  overflow: scroll;
+  #masonry {
+    column-count: 3;
+    column-gap: $base-spacing;
+    padding: $base-spacing;
+    .resource {
+      display: inline-block;
+      width: 100%;
+      max-width: 750px;
+      margin-bottom: $base-spacing;
+    }
+  }
+}
+
+#topbar {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: $topbar-height;
+  width: 100vw;
+  background-color: $tertiary-background-color;
+  #hamburger {
+    display: inline-block;
+    height: $topbar-height;
+    width: $topbar-height;
+    text-align: center;
+    line-height: $topbar-height;
+    &:hover {
+      background-color: shade($tertiary-background-color, 10%);
+    }
+  }
+  h3 {
+    display: inline-block;
+    line-height: $topbar-height;
+  }
+}
+
+#shroud {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@include media($standard) {
+  #content #masonry {
+    column-count: 2;
+  }
+}
+@include media($midsize) {
+  #content #masonry {
+    column-count: 1;
+  }
+}
+@include media($tablet) {
+  body {
+    margin-top: $topbar-height;
+  }
+  #topbar {
+    display: block;
+  }
+  #sidebar {
+    position: fixed;
+    left: -$sidebar-width;
+    top: 0;
+    z-index: 2;
+    transition: left 500ms;
+  }
+}
+@include media($mobile) {
+  #content #masonry {
+    padding: 0;
+    .resource {
+      border: none;
+      border-top: 1px solid $base-border-color;
+      margin-bottom: 0;
+    }
+  }
+}

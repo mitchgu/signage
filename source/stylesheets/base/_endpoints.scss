@@ -1,0 +1,64 @@
+.endpoint {
+  & > header {
+    background-color: $light-gray; //#shade($tertiary-background-color, 10%);
+    @include box-shadow(0, 0 , $base-shadow-blur, $medium-gray, true);
+    padding: 8px $content-gutter;
+    .endpoint-name {
+      margin-bottom: 0;
+    }
+  }
+  .endpoint-content {
+    // Start them hidden
+    display: none;
+    padding: 0 $content-gutter;
+    overflow: hidden;
+    & > * {
+      margin: $base-spacing 0;
+    }
+    .endpoint-route {
+      background-color: $tertiary-background-color;
+      border: 1px solid $base-border-color;
+      border-radius: $base_border_radius;
+      overflow: hidden;
+      display: flex;
+      .endpoint-verb, .endpoint-path {
+        display: block;
+      }
+      .endpoint-verb {
+        background-color: shade($tertiary-background-color, 10%);
+        padding: $base-text-padding $small-spacing;
+      }
+      .endpoint-path {
+        flex: 1;
+        padding: $base-text-padding $small-spacing;
+      }
+    }
+
+    .endpoint-responses {
+      .endpoint-response {
+        @include outer-container;
+        padding: $small-spacing 0;
+        border-top: 1px solid $base-border-color;
+        &:last-child {
+          border-bottom: 1px solid $base-border-color;
+        }
+        .endpoint-response-meta {
+          @include span-columns(2);
+        }
+        .endpoint-response-body {
+          @include span-columns(10);
+          margin: 0;
+        }
+      }
+    }
+    .endpoint-tags {
+      li {
+        padding: $base-text-padding $small-spacing;
+        margin-right: 10px;
+        display: inline-block;
+        border-radius: $base-border-radius;
+        @include tag($medium-gray);
+      }
+    }
+  }
+}

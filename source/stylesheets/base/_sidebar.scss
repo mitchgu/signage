@@ -1,0 +1,28 @@
+#sidebar {
+  background-color: $base-background-color;
+  border-right: 1px solid $light-gray;
+  #title {
+    margin: 30px $sidebar-gutter;
+  }
+  #nav {
+    a {
+      display: block;
+      color: $base-font-color;
+      padding: $large-text-padding $sidebar-gutter;
+      &:hover {
+        color: shade($base-font-color, 25%);
+        background-color: shade($tertiary-background-color, 5%);
+      }
+    }
+    .nav-resource {
+      margin-bottom: 10px;
+      & > a {
+        background-color: shade($tertiary-background-color, 5%);
+        border-bottom: 1px solid $medium-gray;
+        &:hover {
+          background-color: shade($tertiary-background-color, 10%);
+        }
+      }
+    }
+  }
+}

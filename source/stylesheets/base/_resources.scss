@@ -1,0 +1,21 @@
+.resource {
+  background-color: $base-background-color;
+  border: 1px solid $medium-gray;
+  padding: $base-spacing 0;
+  & > header {
+    padding: 0 $content-gutter;
+    .resource-name {
+      margin-top: $small-spacing;
+      margin-bottom: 0;
+    }
+  }
+  .resource-content {
+    padding: 0 $content-gutter;
+    overflow: hidden;
+    & > * {
+      margin-bottom: $base-spacing;
+    }
+  }
+  .endpoint {
+  }
+}
