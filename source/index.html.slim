@@ -12,7 +12,7 @@
           h6
             i.fa.fa-code
             | Model serialization
-          pre= JSON.pretty_generate(r.spec)
+          pre= h(JSON.pretty_generate(r.spec))
     - if r.endpoints
       - r.endpoints.each do |e|
         section.endpoint id="r-#{to_id(r.name)}-e-#{to_id(e.name)}"
