@@ -13,6 +13,6 @@ module BaseHelpers
   end
 
   def as_md(text)
-    return Kramdown::Document.new(text).to_html
+    return Kramdown::Document.new(text).to_html if text
   end
 end
