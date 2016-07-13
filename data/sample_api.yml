@@ -3,7 +3,7 @@ base_path: https://api.your-domain-name.com/v1
 resources:
   - name: Apple
     blurb: |
-      The finest apples in the world wide web
+      The **finest** apples on the world wide web
     spec:
       name: string
       type: string
@@ -15,7 +15,14 @@ resources:
       - name: Get a list of apples
         path: /apples
         verb: get
-        blurb: ALL THE APPLES
+        blurb: |
+          ALL THE APPLES
+          Type choices:
+
+          - honeycrisp
+          - fuji
+          - mcintosh
+          - granny smith
         params:
           - name: type
             param_type: query

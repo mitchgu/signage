@@ -15,6 +15,9 @@ gem 'middleman-minify-html'
 gem 'middleman-compass', '>= 4.0.0'
 gem 'middleman-autoprefixer'
 
+# Kramdown for markdown
+gem 'kramdown'
+
 # Slim
 gem 'slim'
 

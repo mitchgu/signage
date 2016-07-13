@@ -5,8 +5,7 @@
         i.fa.fa-cube
         = r.name
     .resource-content
-      .resource-blurb
-        p= r.blurb
+      .resource-blurb= as_md(r.blurb)
       .resource-spec
         - if r.spec
           h6
@@ -24,7 +23,7 @@
                 i.fa.fa-bolt
                 = e.verb
               code.endpoint-path= h(e.path)
-            p.endpoint-blurb= e.blurb
+            .endpoint-blurb= as_md(e.blurb)
             .endpoint-params
               h6
                 i.fa.fa-arrow-right

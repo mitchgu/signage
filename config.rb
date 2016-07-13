@@ -1,4 +1,5 @@
 require 'slim'
+require 'kramdown'
 
 ###
 # Page options, layouts, aliases and proxies
@@ -45,6 +46,10 @@ helpers do
 
   def endpoint_id(resource, endpoint)
     return resource_id(resource) + "-e-" + to_id(endpoint.name)
+  end
+
+  def as_md(text)
+    return Kramdown::Document.new(text).to_html
   end
 end
 
