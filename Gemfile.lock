@@ -146,6 +146,7 @@ PLATFORMS
 DEPENDENCIES
   bitters (~> 1.3.2)
   bourbon (~> 5.0.0.beta)
+  kramdown
   middleman (>= 4.0.0)
   middleman-autoprefixer
   middleman-compass (>= 4.0.0)
