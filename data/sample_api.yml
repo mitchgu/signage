@@ -14,15 +14,16 @@ resources:
     endpoints:
       - name: Get a list of apples
         path: /apples
-        verb: get
+        verb: GET
         blurb: |
           ALL THE APPLES
+
           Type choices:
 
-          - honeycrisp
-          - fuji
-          - mcintosh
-          - granny smith
+          - `honeycrisp`
+          - `fuji`
+          - `mcintosh`
+          - `granny smith`
         params:
           - name: type
             param_type: query

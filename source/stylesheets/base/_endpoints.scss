@@ -16,13 +16,14 @@
       margin: $base-spacing 0;
     }
     .endpoint-route {
-      background-color: $tertiary-background-color;
       border: 1px solid $base-border-color;
       border-radius: $base_border_radius;
       overflow: hidden;
       display: flex;
       .endpoint-verb, .endpoint-path {
         display: block;
+        border-radius: 0;
+        color: $base-font-color;
       }
       .endpoint-verb {
         background-color: shade($tertiary-background-color, 10%);
@@ -31,6 +32,7 @@
       .endpoint-path {
         flex: 1;
         padding: $base-text-padding $small-spacing;
+        background-color: $tertiary-background-color;
       }
     }
 
