@@ -87,6 +87,7 @@ pre {
   border: 1px solid $base-border-color;
   padding: $small-spacing;
   border-radius: $base-border-radius;
+  overflow-x: scroll;
 }
 
 hr {
